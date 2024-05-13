@@ -1,0 +1,10 @@
+<div class="main">
+    <h1>Where is the ISS? 🛰️</h1>
+    <p>
+        The ISS is at Latitude: <%= data['iss_position']['latitude'] %> 
+        and Longitude: <%= data['iss_position']['longitude'] %>
+    </p>
+    <p>
+        This observation was made at <%= Time.at(data['timestamp']) %>.
+    </p>
+</div>
