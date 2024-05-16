@@ -1,6 +1,6 @@
 <div class="main">
     <h1>Where are the Astronauts? 🧑‍🚀</h1>
-    <p>There are <%= data['number'] %> Astronauts in space right now!</p>
+    <p>There are <%= data['number'] == 0 ? "No" : data['number'] %> <%= data['number'] == 1 ? "Astronaut" : "Astronauts" %> in space right now!</p>
     <div class="container">
         <% data['people'].each do |astronaut| %>
             <div class="item">
