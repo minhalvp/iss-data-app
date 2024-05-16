@@ -1,11 +1,24 @@
 <div class="main">
     <h1>Where are the Astronauts? 🧑‍🚀</h1>
-    <p>There are <%= data['number'] == 0 ? "No" : data['number'] %> <%= data['number'] == 1 ? "Astronaut" : "Astronauts" %> in space right now!</p>
-    <div class="container">
-        <% data['people'].each do |astronaut| %>
-            <div class="item">
-                <%= astronaut['name'] + ' is in ' + astronaut['craft'] %>
-            </div>
+    <p>
+        <% if data['number'] == 0 %>
+            There are No Astronauts in space right now!
+        <% elsif data['number'] == 1 %>
+            There is 1 Astronaut in space right now!
+        <% else %>
+            There are <%= data['number'] %> Astronauts in space right now!
         <% end %>
-    </div>
+    </p>
+    <table class="astro-table">
+        <tr>
+            <th>Name</th>
+            <th>Craft</th>
+        </tr>
+        <% data['people'].each do |person| %>
+            <tr>
+                <td><%= person['name'] %></td>
+                <td><%= person['craft'] %></td>
+            </tr>
+        <% end %>
+    </table>
 </div>
